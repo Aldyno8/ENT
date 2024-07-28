@@ -6,7 +6,7 @@ parcours_choice = [('RSI', 'RSI'), ('IDEV', 'IDEV')]
 # Create your models here.
 # models qui gère les étudiants
 class Students(models.Model):
-    User = models.OneToOneField(User, on_delete=models.CASCADE)
+    User = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user')
     Pseudo = models.CharField(max_length=20, null=True)
     Niveau = models.CharField(max_length=3, choices=niveau_choice, default= 'L1')
     Parcours = models.CharField(max_length=5, choices=parcours_choice, default= 'IDEV')
@@ -35,3 +35,16 @@ class Documents(models.Model):
     
     def __str__(self):
         return self.Name
+    
+# models qui gère les évents
+class Events(models.Model):
+    Name = models.CharField(max_length=100)
+    Description = models.TextField()
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+    add_date = models.DateTimeField(auto_now_add=True)
+    students = models.ManyToManyField(Students, related_name='events')
+    
+    def __str__(self):
+        return self.Name
+    

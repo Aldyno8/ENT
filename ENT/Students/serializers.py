@@ -12,3 +12,9 @@ class ContentSerializers(serializers.ModelSerializer):
     class Meta:
         model = Documents
         fields = '__all__'
+        
+# serialiers des events
+class EventSerialzer(serializers.ModelSerializer):
+    class Meta:
+        model = Events
+        fields = ('id', 'Name', 'Description', 'start', 'end')

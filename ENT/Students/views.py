@@ -9,8 +9,9 @@ from .serializers import *
 class ModulesList(APIView):
     def get(self, request):
         user = request.user # récupère les informations de l'user qui fait la requete
+        
         try:
-            students = Students.objects.get(id=user.id)
+            students = user.students
             course = students.modules.all()
             
             # Sérializers les donnés du cours
@@ -24,12 +25,29 @@ class ModulesList(APIView):
 class ModulesContent(APIView):
     def get(self, request, id):
         try:
-            content = Documents.objects.filter(id=id)
+            modules = Modules.objects.get(id=id)
+            content = modules.contents.all()
+            
             if not content.exists():
-                return Response({"message":"Ce module ne contient aucun cours pour l'instant"}, status=status.HTTP_204_NO_CONTENT)
+               return Response({"message":"Ce module ne contient aucun cours pour l'instant"}, status=status.HTTP_204_NO_CONTENT)
             
             content_serializes = ContentSerializers(content, many=True)
             return Response(content_serializes.data, status=status.HTTP_200_OK)
         
         except Exception as e:
             return Response({"message":str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        
+# Class qui va gérer l'affichage des évents
+class EventListView(APIView):
+   def get(self, request):
+        user = request.user
+        try:
+            students = user.user
+            events = students.events.all()
+            events_serializes = EventSerialzer(events, many=True)
+            
+            return Response(events_serializes.data, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            return Response({"message": str(e)})
+        
