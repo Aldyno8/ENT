@@ -18,18 +18,18 @@ class Students(models.Model):
         return self.Pseudo
     
 # models qui gère les cours
-class Course(models.Model):
+class Modules(models.Model):
     Name = models.CharField(max_length=30)
     Duration = models.IntegerField()
     Credit = models.IntegerField()
-    Students = models.ManyToManyField(Students, blank=True, related_name='courses')
+    Students = models.ManyToManyField(Students, blank=True, related_name='modules')
     
     def __str__(self):
         return self.Name
    
 # models qui gère les Documents 
 class Documents(models.Model):
-    Course = models.OneToOneField(Course, on_delete=models.CASCADE)
+    Modules = models.ForeignKey(Modules, on_delete=models.CASCADE, related_name='contents', null=True)
     Name = models.CharField(max_length=50)
     Link = models.FileField(upload_to='Documents/')
     
