@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from Professor.models import Professor as Prof
 niveau_choice = [('L1', 'L1'), ('L2', 'L2'), ('L3', 'L3')]
 parcours_choice = [('RSI', 'RSI'), ('IDEV', 'IDEV')]
 
@@ -20,6 +21,7 @@ class Students(models.Model):
 # models qui gère les cours
 class Modules(models.Model):
     Name = models.CharField(max_length=30)
+    Professor = models.ForeignKey(Prof, on_delete=models.CASCADE, null=True, related_name='modules')
     Duration = models.IntegerField()
     Credit = models.IntegerField()
     Students = models.ManyToManyField(Students, blank=True, related_name='modules')
