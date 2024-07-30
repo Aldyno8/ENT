@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Authentication',
     'Students',
     'Professor',
+    'Commun',
     'rest_framework',
     'rest_framework_simplejwt'
     

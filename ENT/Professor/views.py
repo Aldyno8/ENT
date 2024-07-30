@@ -1,10 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from Students.serializers import ModulesSerializers, ContentSerializers
+from Commun.serializers import ModulesSerializers, ContentSerializers
 from .models import *
-from Students.models import Modules, Documents
-#from .seriarilzers import *
+from Commun.models import Modules, Documents
+#  from .seriarilzers import *
 
 # Create your views here.
 class ModuleListView(APIView):
@@ -22,7 +22,7 @@ class ModuleListView(APIView):
             return Response({"message":str(e)}, status=status.HTTP_400_BAD_REQUEST)
             
             
-# class qui affiche la liste des contenue du Modules
+# class qui affiche la liste des contenus du Modules et permemt au prof de publier des contenus de cours
 class ModulesContent(APIView):
     def get(self, request, id):
         try:
