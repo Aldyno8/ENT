@@ -20,8 +20,7 @@ class ModuleListView(APIView):
         
         except Exception as e:
             return Response({"message":str(e)}, status=status.HTTP_400_BAD_REQUEST)
-            
-            
+                   
 # class qui affiche la liste des contenus du Modules et permemt au prof de publier des contenus de cours
 class ModulesContent(APIView):
     def get(self, request, id):

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Students',
     'Professor',
     'Commun',
+    'Admin',
     'rest_framework',
     'rest_framework_simplejwt'
     
@@ -54,6 +55,7 @@ REST_FRAMEWORK = {
     ),
 }
 
+AUTH_USER_MODEL = 'Authentication.UserModels'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
