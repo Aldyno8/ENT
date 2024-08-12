@@ -6,7 +6,7 @@ parcours_choice = [('RSI', 'RSI'), ('IDEV', 'IDEV')]
 # Create your models here.
 # models qui gère les étudiants
 class Students(models.Model):
-    User = models.OneToOneField(UserModels, on_delete=models.CASCADE, related_name='user')
+    User = models.OneToOneField(UserModels, on_delete=models.CASCADE, related_name='students')
     Pseudo = models.CharField(max_length=20, null=True)
     Niveau = models.CharField(max_length=3, choices=niveau_choice, default= 'L1')
     Parcours = models.CharField(max_length=5, choices=parcours_choice, default= 'IDEV')

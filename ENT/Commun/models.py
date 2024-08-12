@@ -4,9 +4,7 @@ from Professor.models import Professor as Prof
 from Authentication.models import UserModels
 
 # Create your models here.
-# models qui gère les cours
-
-    
+# models qui gère les cours   
 class Modules(models.Model):
     name = models.CharField(max_length=30)
     professor = models.ForeignKey(Prof, on_delete=models.CASCADE, null=True, related_name='modules')
@@ -33,7 +31,7 @@ class Events(models.Model):
     students = models.ManyToManyField(Students, related_name='events')
     
     def __str__(self):
-        return self.Name
+        return self.name
 
 # models qui gère le forum
 class Forum(models.Model):
