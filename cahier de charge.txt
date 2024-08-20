@@ -1,0 +1,54 @@
+ 1.1 Contexte
+L'application ENT est conçue pour offrir un espace numérique centralisé aux établissements éducatifs, permettant aux enseignants, aux étudiants, et aux parents d’accéder aux ressources, à la gestion des cours et à la communication scolaire.
+
+ 1.2 Objectifs
+- Améliorer la communication entre les différents acteurs de l’éducation (enseignants, étudiants, parents).
+- Faciliter l’accès aux ressources pédagogiques et administratives.
+- Optimiser la gestion des cours et des évaluations.
+
+ 2. Fonctionnalités
+
+ 2.1 Gestion des Utilisateurs
+- Inscription et Authentification : Authentification sécurisée via identifiants
+- Gestion des Profils : Création et gestion des profils pour les enseignants, étudiants.
+- Rôles et Permissions : Définition des rôles (administrateurs, enseignants, étudiants) et des permissions associées.
+
+ 2.2 Gestion des Cours
+- Création de Cours : Création et gestion des cours avec description, calendrier, et ressources associées.
+- Inscription aux Cours : Inscription et désinscription des étudiants aux cours.
+- Gestion des Matières : Organisation des matières et des unités d’enseignement.
+
+ 2.3 Communication
+- Messagerie : Système de messagerie interne pour la communication entre enseignants, étudiants
+- Annonces : Publication d’annonces et de notifications pour les cours et les événements scolaires.
+- Forum : Espaces de discussion et de collaboration pour les étudiants et les enseignants.
+
+ 2.4 Gestion des Evaluations
+- Évaluations : Création, gestion, et publication des évaluations et des devoirs.
+- Notes : Saisie et consultation des notes et des résultats des évaluations.
+- Statistiques : Génération de rapports et de statistiques sur les performances académiques.
+
+ 2.5 Ressources Pédagogiques
+- Bibliothèque : Accès à des ressources pédagogiques en ligne (documents, vidéos, etc.).
+- Support : Accès aux supports de cours et aux matériels pédagogiques.
+
+ 2.6 Administration
+- Gestion des Utilisateurs : Administration des comptes utilisateurs et gestion des rôles.
+- Paramétrage : Configuration des paramètres du système (calendrier scolaire, options de communication, etc.).
+
+ 2.7 Accessibilité et Sécurité
+- Accessibilité : Conformité avec les normes d’accessibilité pour les personnes handicapées.
+- Sécurité : Protection des données personnelles et conformité avec les réglementations en vigueur (ex. RGPD).
+
+ 3. Exigences Techniques
+
+ 3.1 Architecture
+- Technologies : Python/Django
+- Base de Données : PostgreSql
+
+ 3.2 Performance
+- Temps de Réponse : Temps de réponse optimal pour une expérience utilisateur fluide. (2s)
+
+
+
+
